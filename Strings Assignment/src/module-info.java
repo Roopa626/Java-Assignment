@@ -1,0 +1,2 @@
+module string.java {
+}
