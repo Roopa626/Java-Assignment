@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<!-- using setter injection-->
+
+<bean name="address" class="springcore_1.Address">  
+<property name="street"> <value>1 </value> </property>  
+<property name="city"> <value>Madanapalle</value> </property>
+<property name="state"> <value>AP</value> </property>
+<property name="zip"> <value>517390</value> </property>
+<property name="country"> <value>India</value></property>
+</bean>  
+
+<bean name="customer" class="springcore_1.Customer">  
+<property name="customerId"> <value>2 </value> </property>  
+<property name="customerName"> <value>Roopa</value> </property>
+<property name="customerContact"> <value>9949247181</value> </property>
+<property name="customerAddress" ref = "address">  </property>
+
+</bean>  
+  
+  <!-- using constructor injection -->
+  
+  <bean name="a" class="springcore_1.Address">  
+<constructor-arg value = "Chaitu" type = "String"></constructor-arg>
+<constructor-arg value = "Madanapalle" type = "String"></constructor-arg>
+<constructor-arg value = "AP" type = "String"></constructor-arg>
+<constructor-arg value = "517390" type = "int"></constructor-arg>
+<constructor-arg value = "India" type = "String"></constructor-arg>
+</bean>
+
+<bean name="c" class="springcore_1.Customer">  
+<constructor-arg value = "131" type = "int"></constructor-arg>
+<constructor-arg value = "Roopa" type = "String"></constructor-arg>
+<constructor-arg value = "9949247181" type = "String"></constructor-arg>
+<constructor-arg ref = "a" ></constructor-arg>
+</bean>  
+</beans>
